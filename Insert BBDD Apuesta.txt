@@ -1,0 +1,28 @@
+/*Insertar eventos*/
+INSERT INTO evento VALUES (1, 'Valencia CF', 'Betis');
+INSERT INTO evento VALUES (2, 'Real Madrid CF', 'Villareal');
+INSERT INTO evento VALUES (3, 'Barcelona FC', 'Levante');
+
+
+/*Insertar mercados*/
+INSERT INTO mercado (Id, InfoCuotaOver, InfoCuotaUnder, DineroApostadoOver, DineroApostadoUnder, TipoMercado, idEvento) VALUES (1, 2.50, 1.25, 120, 150, 1.5, 1);
+INSERT INTO mercado (Id, InfoCuotaOver, InfoCuotaUnder, DineroApostadoOver, DineroApostadoUnder, TipoMercado, idEvento) VALUES (2, 2.83, 1.46, 200, 1500, 2.5, 2);
+INSERT INTO mercado (Id, InfoCuotaOver, InfoCuotaUnder, DineroApostadoOver, DineroApostadoUnder, TipoMercado, idEvento) VALUES (3, 0.90, 1.10, 83, 140, 3.5, 3);
+
+
+/*Insertar usuarios*/
+INSERT INTO usuario (idUsuario, Nombre, Apellido, Email, Edad) VALUES (1, 'Juan', 'Martinez', 'jmartinez@gmail.com', 21);
+INSERT INTO usuario (idUsuario, Nombre, Apellido, Email, Edad) VALUES (2, 'Andrés', 'Gonzalez', 'andresgonz@gmail.com', 33);
+INSERT INTO usuario (idUsuario, Nombre, Apellido, Email, Edad) VALUES (3, 'Pablo', 'Perez', 'pabloperez@gmail.com', 26);
+
+
+/*Insertar apuestas*/
+INSERT INTO apuesta (Id_Apuesta, TipoApuesta, Cuota, DineroApostado, Id_Mercado, Id_Usuario) VALUES (100, "over", 2.50, 10, 1, 1);
+INSERT INTO apuesta (Id_Apuesta, TipoApuesta, Cuota, DineroApostado, Id_Mercado, Id_Usuario) VALUES (101, "under", 2.83, 26, 2, 2);
+INSERT INTO apuesta (Id_Apuesta, TipoApuesta, Cuota, DineroApostado, Id_Mercado, Id_Usuario) VALUES (102, "over", 0.90, 30, 3, 3);
+
+
+/*Insertar cuenta bancaria*/
+INSERT INTO cuentabancaria (NumTarjeta, Saldo, NombreBanco, idUsuario) VALUES (123456789, 2150.12, 'Bankia', 1);
+INSERT INTO cuentabancaria (NumTarjeta, Saldo, NombreBanco, idUsuario) VALUES (987654321, 5001.12, 'Santander', 2);
+INSERT INTO cuentabancaria (NumTarjeta, Saldo, NombreBanco, idUsuario) VALUES (111222333, 1844.84, 'BBVA', 3);
