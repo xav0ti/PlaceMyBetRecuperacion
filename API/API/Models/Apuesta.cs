@@ -113,10 +113,46 @@ namespace API.Models
         }
 
 
+    //EXAMEN EJERCICIO 
+
+    public class ApuestaValores
+    {
+        public ApuestaValores(int Id_Apuesta, string tipoApuesta, double cuota, double dineroApostado)
+        {
+            this.Id_Apuesta = Id_Apuesta;
+            this.TipoApuesta = tipoApuesta;
+            this.Cuota = cuota;
+            this.DineroApostado = dineroApostado;
+        }
+
+        public int Id_Apuesta { get; set; }
+        public string TipoApuesta { get; set; }
+        public double Cuota { get; set; }
+        public double DineroApostado { get; set; }
+
+    }
 
 
 
 
+    public class ApuestaEjercicio1
+    {
+        public ApuestaEjercicio1(int Id_Apuesta, string tipoApuesta, double cuota, double dineroApostado, double Id_Mercado)
+        {
+            this.Id_Apuesta = Id_Apuesta;
+            this.TipoApuesta = tipoApuesta;
+            this.Cuota = cuota;
+            this.Id_Mercado = Id_Mercado;
+            this.DineroApostado = dineroApostado;
+        }
+
+        public int Id_Apuesta { get; set; }
+        public string TipoApuesta { get; set; }
+        public double Cuota { get; set; }
+        public double DineroApostado { get; set; }
+        public double Id_Mercado { get; set; }
+
+    }
 
 
 

@@ -94,6 +94,10 @@ namespace API.Models
 
 
 
+
+
+
+
         //-----------------------------------------------------------------------------------------------------  
 
 
@@ -402,6 +406,62 @@ namespace API.Models
         }
 
 
+
+        //EJERCICIO 1 EXAMEN RECUPERACION
+
+        internal List<Apuesta> RetrieveRecuperacion(int idMercado)
+        {
+            List<Apuesta> apuestas = new List<Apuesta>();
+
+            MySqlConnection con = Connect();
+            MySqlCommand command = con.CreateCommand();
+            command.CommandText = "SELECT * FROM apuesta WHERE Id_Mercado  =" + idMercado;
+
+            con.Open();
+            MySqlDataReader res = command.ExecuteReader();
+
+            while (res.Read())
+            {
+                apuestas.Add(new Apuesta(res.GetInt32(0), res.GetString(1), res.GetDouble(2), res.GetDouble(3), res.GetDouble(4), res.GetInt32(5)));
+            }
+
+            return apuestas;
+
+        }
+
+
+
+
+
+
+
+
+        //EJERCICIO 2 EXAMEN RECUPERACION
+
+        internal List<Apuesta> RetrieveUsuCuota(int idUsuario, int cuota)
+        {
+
+            List<Apuesta> apuestas = new List<Apuesta>();
+
+            MySqlConnection con = Connect();
+            MySqlCommand command = con.CreateCommand();
+            command.CommandText = "SELECT * FROM apuesta WHERE id_Usuario = " + idUsuario + " && Cuota > " + cuota ;
+
+            con.Open();
+            MySqlDataReader res = command.ExecuteReader();
+
+            while (res.Read())
+            {
+                apuestas.Add(new Apuesta(res.GetInt32(0), res.GetString(1), res.GetDouble(2), res.GetDouble(3), res.GetDouble(4), res.GetInt32(5)));
+            }
+
+            return apuestas;
+
+
+
+
+
+        }
 
 
 

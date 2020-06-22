@@ -32,17 +32,6 @@ namespace API.Controllers
             List<ApuestaEmail> apuestas = repo.RetrievebyEmail(email);
             return apuestas;
         }
-
-    //EJERCICIO 1 EXAMEN PLACEMYBET
-
-        // GET: api/Apuestas?idMercado=mercado
-
-        public IEnumerable<ApuestaMerc> GetApuestasMerc(int idMercado) //Aqui le pasamos idMercado porque es lo que le vamos a pasar en Postman para recuperar datos
-        {
-            var repo = new ApuestaRepository();
-            List<ApuestaMerc> apuestas = repo.RetrievebyMercado(idMercado);
-            return apuestas;
-        }
          
 
         public void Post([FromBody] Apuesta apu)
@@ -52,30 +41,31 @@ namespace API.Controllers
         }
 
 
-        //EXAMEN EJERCICIO 1 ==> Saca una lista ApuestaExamen donde se obtenga el Nombre de usuario, el mercado, la cuota y el dinero apostado
+        //EXAMEN EJERCICIO 1 RECUPERACION
 
-        // GET: api/ApuestaExamen 
-        [Route("api/ApuestaExamen")]
+        //Get: api/Apuestas?idMercado=mercado
 
-        public IEnumerable<ApuestaExamen> GetEjercico1()
+        public IEnumerable<Apuesta> GetApuestaMerca(int idMercado)
         {
             var repo = new ApuestaRepository();
-            List<ApuestaExamen> apuestas = repo.RetrieveEjercicio1();
+            List<Apuesta> apuesta = repo.RetrieveRecuperacion(idMercado);
 
-            return apuestas;
+            return apuesta;
         }
 
 
 
-        //EXAMEN EJERCICIO 2 ==> Recupera las apuestas cuyas cuots estan entre un valor minimo y un valor maximo pasados por parámetros
 
-        // GET: api/Apuesta?anyo=valor1&anyofin=valor2
-        public IEnumerable<ApuestaValores> GetEjercicio2(int valormin, int valormax)
+        //EXAMEN EJERCICIO 2 RECUPERACION
+
+        // GET: api/Apuestas?id_Usuario=idusu&&cuota>cuota
+
+        public IEnumerable<Apuesta> GetApuestaUsu(int idUsuario, int cuota)
         {
             var repo = new ApuestaRepository();
-            List<ApuestaValores> apuestas = repo.RetrieveEjercicio2(valormin, valormax);
+            List<Apuesta> apuesta = repo.RetrieveUsuCuota(idUsuario, cuota);
 
-            return apuestas;
+            return apuesta;
         }
 
 
