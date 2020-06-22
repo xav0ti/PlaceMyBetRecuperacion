@@ -93,7 +93,7 @@ namespace API.Models
             public double DineroApostado { get; }
         }
 
-    //EXAMEN EJERCICIO 1 ==> Saca una lista ApuestaExamen donde se obtenga el Nombre de usuario, el mercado, la cuota y el dinero apostado
+    //EXAMEN EJERCICIO 1 PLACEMYBET
 
         public class ApuestaExamen
         {
@@ -113,24 +113,7 @@ namespace API.Models
         }
 
 
-    //EXAMEN EJERCICIO 2 ==> Recupera las apuestas cuyas cuots estan entre un valor minimo y un valor maximo pasados por parámetros
 
-    public class ApuestaValores
-    {
-        public ApuestaValores(int Id_Apuesta, string tipoApuesta, double cuota, double dineroApostado)
-        {
-            this.Id_Apuesta = Id_Apuesta;
-            this.TipoApuesta = tipoApuesta;
-            this.Cuota = cuota;
-            this.DineroApostado = dineroApostado;
-        }
-
-        public int Id_Apuesta { get; set; }
-        public string TipoApuesta { get; set; }
-        public double Cuota { get; set; }
-        public double DineroApostado { get; set; }
-
-    }
 
 
 

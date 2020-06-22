@@ -33,12 +33,10 @@ namespace API.Controllers
             return apuestas;
         }
 
+    //EJERCICIO 1 EXAMEN PLACEMYBET
 
-        //Para un mercado concreto, recuperar todas sus apuestas.Al menos, con la siguiente
-        //información: email de usuario, tipo de mercado, tipo de apuesta, cuota y dinero apostado
         // GET: api/Apuestas?idMercado=mercado
 
-        [Authorize(Roles ="Admin")] //Aqui solo le damos autorizacion a los que son Admin
         public IEnumerable<ApuestaMerc> GetApuestasMerc(int idMercado) //Aqui le pasamos idMercado porque es lo que le vamos a pasar en Postman para recuperar datos
         {
             var repo = new ApuestaRepository();
