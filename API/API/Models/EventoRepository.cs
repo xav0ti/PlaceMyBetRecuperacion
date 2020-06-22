@@ -3,6 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Diagnostics;
+using System.Globalization;
+
 
 namespace API.Models
 {
@@ -37,7 +40,34 @@ namespace API.Models
                 eventos.Add(new EventoDTO(res.GetString(0), res.GetString(1)));
             }
             return eventos;
-        }
+        } 
+
+
+        //PLACEMYBET TIPO A EJERCICIO 3 ==> 
+
+        /*
+        MySqlConnection conEvento = Connect();
+        MySqlCommand commandEvento = conEvento.CreateCommand();
+        commandEvento.CommandText = "INSERT INTO Evento (Id, NombreLocal, NombreVisitante) VALUES ('" + eve.Id + "' , '" + eve.NombreLocal + "' , '" + eve.NombreVisitante + "'); ";
+
+
+            Debug.WriteLine("hago el comando " + commandEvento.CommandText);
+
+
+            Debug.WriteLine("comando " + commandEvento.CommandText);
+
+            try
+            {
+                conEvento.Open();
+                commandEvento.ExecuteNonQuery();
+                conEvento.Close();
+            }
+            catch (MySqlException e)
+            {
+                Debug.WriteLine("Se ha producido un error de conexión " + e.Message);
+            }
+        */
+
 
     }
 }

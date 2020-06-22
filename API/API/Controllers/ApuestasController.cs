@@ -55,8 +55,9 @@ namespace API.Controllers
 
 
         //EXAMEN EJERCICIO 1 ==> Saca una lista ApuestaExamen donde se obtenga el Nombre de usuario, el mercado, la cuota y el dinero apostado
-      
+
         // GET: api/ApuestaExamen 
+        [Route("api/ApuestaExamen")]
 
         public IEnumerable<ApuestaExamen> GetEjercico1()
         {
@@ -71,10 +72,10 @@ namespace API.Controllers
         //EXAMEN EJERCICIO 2 ==> Recupera las apuestas cuyas cuots estan entre un valor minimo y un valor maximo pasados por parámetros
 
         // GET: api/Apuesta?anyo=valor1&anyofin=valor2
-        public IEnumerable<ApuestaValores> GetEjercicio2(int anyo, int anyofin)
+        public IEnumerable<ApuestaValores> GetEjercicio2(int valormin, int valormax)
         {
             var repo = new ApuestaRepository();
-            List<ApuestaValores> apuestas = repo.RetrieveEjercicio2(anyo, anyofin);
+            List<ApuestaValores> apuestas = repo.RetrieveEjercicio2(valormin, valormax);
 
             return apuestas;
         }

@@ -386,7 +386,7 @@ namespace API.Models
 
             MySqlConnection con = Connect();
             MySqlCommand command = con.CreateCommand();
-            command.CommandText = "SELECT Id_Apuesta, TipoApuesta, Cuota, DineroApostado FROM apuesta WHERE valormin > @ AND valor max < @B";
+            command.CommandText = "SELECT Id_Apuesta, TipoApuesta, Cuota, DineroApostado FROM apuesta WHERE Cuota > @A AND Cuota < @B";
             command.Parameters.AddWithValue("@A", valormin);
             command.Parameters.AddWithValue("@B", valormax);
 
